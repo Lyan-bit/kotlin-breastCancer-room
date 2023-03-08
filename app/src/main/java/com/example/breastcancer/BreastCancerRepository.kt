@@ -1,6 +1,5 @@
 package com.example.breastcancer
 
-import com.example.breastcancer.BreastCancerEntity
 import kotlinx.coroutines.flow.Flow
 
 interface BreastCancerRepository {
