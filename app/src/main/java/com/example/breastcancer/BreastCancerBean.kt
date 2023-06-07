@@ -131,7 +131,7 @@ class BreastCancerBean(c: Context) {
 	       errors.add("mcp is not a Float")
 	     }
 
-	     return errors.size > 0
+	     return errors.isNotEmpty()
 	 }
 	
 	    suspend fun createBreastCancer() {
@@ -141,7 +141,7 @@ class BreastCancerBean(c: Context) {
 	
 	    fun isListBreastCancerError(): Boolean {
 	 	  errors.clear()
-	      return errors.size > 0
+	      return errors.isNotEmpty()
 	 }
 	 	    
 
@@ -151,7 +151,7 @@ class BreastCancerBean(c: Context) {
     	    if (!allBreastCancerIds.contains(id)) {
     	        errors.add("The id is not exist")
     	        }
-    	    return errors.size > 0
+    	    return errors.isNotEmpty()
      }
 	
 	    fun errors(): String {
