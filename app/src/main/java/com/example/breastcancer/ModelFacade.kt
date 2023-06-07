@@ -132,7 +132,7 @@ class ModelFacade private constructor(context: Context) {
 	}
 	    
     suspend fun classifyBreastCancer(breastCancer: BreastCancer) : String {
-        var result = ""
+        var result : String
 	    lateinit var tflite : Interpreter
 	    lateinit var tflitemodel : ByteBuffer
 	
@@ -165,7 +165,7 @@ class ModelFacade private constructor(context: Context) {
 	            output[i] = outputVal.float
 	        }
 	        
-	     result = getSortedResult(output, labelsList).get(0).toString()
+	     result = getSortedResult(output, labelsList)[0].toString()
 	        
 	        breastCancer.outcome = result
 	        persistBreastCancer(breastCancer)
