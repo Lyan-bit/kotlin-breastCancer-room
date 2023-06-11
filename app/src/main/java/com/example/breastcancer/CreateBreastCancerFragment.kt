@@ -101,15 +101,15 @@ class CreateBreastCancerFragment : Fragment(), View.OnClickListener {
 		}
 		when (v?.id) {
 			R.id.createBreastCancerOK-> {
-				createBreastCancerOK()
+				createOK()
 			}
 			R.id.createBreastCancerCancel-> {
-				createBreastCancerCancel()
+				createCancel()
 			}
 		}
 	}
 
-	private fun createBreastCancerOK () {
+	private fun createOK () {
 		idData = idTextField.text.toString()
 		breastCancerBean.setId(idData)
 		ageData = ageTextField.text.toString()
@@ -145,7 +145,7 @@ class CreateBreastCancerFragment : Fragment(), View.OnClickListener {
 			}
 	}
 
-	private fun createBreastCancerCancel () {
+	private fun createCancel () {
 		breastCancerBean.resetData()
 		idTextField.setText("")
 		ageTextField.setText("")
