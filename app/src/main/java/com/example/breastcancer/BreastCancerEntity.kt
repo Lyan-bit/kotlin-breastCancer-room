@@ -1,6 +1,6 @@
 package com.example.breastcancer
 
-import androidx.room.Entity
+import androidx.room.Entity 
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "breastCancerTable")
