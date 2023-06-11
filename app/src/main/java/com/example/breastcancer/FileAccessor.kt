@@ -14,7 +14,6 @@ class FileAccessor (context: Context) {
         fun createFile(filename: String)
         { try
         { 
-        	//val newFile = 
         	File(myContext.filesDir, filename) }
         catch (e: Exception) { e.printStackTrace() }
         }
