@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.breastcancer">
 
-
+ 
     <application
         android:name=".BreastCancerApplication"
         android:allowBackup="true"
