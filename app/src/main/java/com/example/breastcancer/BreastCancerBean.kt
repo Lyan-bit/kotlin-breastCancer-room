@@ -28,7 +28,9 @@ class BreastCancerBean(c: Context) {
     private var dmcp = 0.0F
     private var outcome = ""
     private var errors = ArrayList<String>()
-	
+    private var checkParameter = " is not exist"
+    private var checkEmpty = " cannot be empty"
+    
     fun setId(idx: String) {
 	 id = idx
     }
@@ -63,6 +65,7 @@ class BreastCancerBean(c: Context) {
 	 outcome = outcomex
     }
 	fun resetData() {
+		//resetData
 	  id = ""
 	  age = ""
 	  bmi = ""
@@ -83,7 +86,7 @@ class BreastCancerBean(c: Context) {
 	//validate
 }
 	     else {
-	        errors.add("id cannot be empty")
+	        errors.add("id" + checkEmpty)
 	     }
     try {
 	     dage = age.toInt()
@@ -141,6 +144,7 @@ class BreastCancerBean(c: Context) {
 	
 	    fun isListBreastCancerError(): Boolean {
 	 	  errors.clear()
+	 	  //if statement
 	      return errors.isNotEmpty()
 	 }
 	 	    
@@ -149,7 +153,7 @@ class BreastCancerBean(c: Context) {
 			fun isSearchBreastCancerIdError(allBreastCancerIds: List<String>): Boolean {
     	    errors.clear()
     	    if (!allBreastCancerIds.contains(id)) {
-    	        errors.add("The id is not exist")
+    	        errors.add(id + checkParameter)
     	        }
     	    return errors.isNotEmpty()
      }
