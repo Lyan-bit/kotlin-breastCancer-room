@@ -17,13 +17,12 @@ import java.util.*
 class ModelFacade private constructor(context: Context) {
 
     private val assetManager: AssetManager = context.assets
-    private var fileSystem: FileAccessor
+    private val fileSystem: FileAccessor by lazy { FileAccessor(context) }
 
 
 
     init {
     	//init
-        fileSystem = FileAccessor(context)
     }
 
     companion object {
@@ -33,7 +32,6 @@ class ModelFacade private constructor(context: Context) {
             return instance ?: ModelFacade(context)
         }
     }
-    
 
     val allBreastCancers: LiveData<List<BreastCancerEntity>> = repository.allBreastCancers.asLiveData()
 
@@ -159,7 +157,7 @@ class ModelFacade private constructor(context: Context) {
 	    tflite.run(inputVal, outputVal)
 	    outputVal.rewind()
 	        
-	  	val labelsList : List<String> = listOf ("positive","negative")
+	  	val labelsList : List<String> = listOf ("negative","positive")
 	    val output = FloatArray(2)
 	        for (i in 0..1) {
 	            output[i] = outputVal.float
