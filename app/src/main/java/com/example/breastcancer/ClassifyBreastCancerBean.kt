@@ -11,6 +11,7 @@ class ClassifyBreastCancerBean(c: Context) {
 	
 
     private var errors = ArrayList<String>()
+    private var checkEmpty = " cannot be empty"
 
     fun setBreastCancer(breastcancerx: String) {
         breastcancer = breastcancerx
